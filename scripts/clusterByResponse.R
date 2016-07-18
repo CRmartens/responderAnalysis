@@ -7,7 +7,7 @@ clusterByResponse <- function(dataSet, numClusters, responseVariable){
   response.kmeans <- kmeans(response, centers = numClusters)
   
   # add cluster identity to dataSet
-  dataSet$cluster <- response.kmeans$cluster
+  dataSet$cluster <- as.numeric(response.kmeans$cluster)
   
   return(dataSet)
   
