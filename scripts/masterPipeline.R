@@ -9,6 +9,7 @@ responseVar <- "deltaFMD"
 # perform K-means clustering
 dat <- clusterByResponse(dataSet = dat, numClusters = 2, responseVariable = responseVar)
 
+
 # plot by cluster
 plotByCluster(dat, responseVar)
 
@@ -20,6 +21,8 @@ for(i in 1:numClusters){
   datByCluster <- subset(dat, dat$cluster == i)
   clusterMeans[i] <- mean(datByCluster[ , responseVar])
 }
+
+remove(datByCluster)
 
 barplot(clusterMeans, col = c("blue", "red"), 
         ylab = responseVar, 
