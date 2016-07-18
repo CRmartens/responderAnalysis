@@ -26,6 +26,8 @@ barplot(clusterMeans, col = c("blue", "red"),
 
 # predict cluster group using regression
 
+model <- lm(dat$SEX ~ as.factor(dat$cluster == cluster[1]))
+
 
 
 
